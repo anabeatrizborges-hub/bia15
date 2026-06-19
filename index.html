@@ -11,55 +11,60 @@
 <body>
 
     <header class="hero">
-        <div class="overlay"></div>
         <div class="hero-content">
-            <i class="fa-solid fa-seedling logo-icon"></i>
+            <i class="fa-solid fa-leaf logo-icon"></i>
             <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>Portal de Pesquisa e Análise de Dados do Agronegócio Brasileiro - Agrinho 2026</p>
+            <p>Portal de Pesquisa e Imagens do Agronegócio Brasileiro - Agrinho 2026</p>
         </div>
     </header>
 
     <main class="container">
         
         <section class="search-section">
-            <h2><i class="fa-solid fa-magnifying-glass"></i> Espaço do Acadêmico</h2>
-            <p>Explore dados reais sobre a sustentabilidade, produção e tecnologia no campo brasileiro.</p>
+            <h2><i class="fa-solid fa-graduation-cap"></i> Espaço de Pesquisa Acadêmica</h2>
+            <p>Explore dados reais, gráficos e bancos de imagens sobre a sustentabilidade e tecnologia no campo.</p>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Digite uma cultura (Ex: Soja, Milho, Algodão)...">
+                <input type="text" id="searchInput" placeholder="Digite o que procura (Ex: Tecnologia, Soja, Sustentável)...">
                 <button onclick="buscarDados()"><i class="fa-solid fa-search"></i> Pesquisar</button>
             </div>
         </section>
 
-        <section class="cards-grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
-                <h3>Área Preservada</h3>
-                <p class="data-number">66%</p>
-                <p class="data-desc">do território brasileiro preservado pela vegetação nativa.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
-                <h3>Safra Sustentável</h3>
-                <p class="data-number">+310M</p>
-                <p class="data-desc">de toneladas estimadas com técnicas de plantio direto.</p>
-            </div>
-            <div class="card">
-                <div class="fa-solid fa-solar-panel card-icon"></div>
-                <h3>Energia Limpa</h3>
-                <p class="data-number">45%</p>
-                <p class="data-desc">da matriz energética do agro provém de fontes renováveis.</p>
+        <section class="agro-gallery">
+            <h2><i class="fa-solid fa-camera"></i> O Agro Brasileiro em Imagens</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=600" alt="Tecnologia no Campo">
+                    <div class="gallery-info">
+                        <h3>Tecnologia e Precisão</h3>
+                        <p>Drones e sensores otimizando o uso de recursos hídricos.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&q=80&w=600" alt="Plantação Sustentável">
+                    <div class="gallery-info">
+                        <h3>Culturas Sustentáveis</h3>
+                        <p>O poder da rotação de culturas e do plantio direto no solo brasileiro.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&q=80&w=600" alt="Energia Solar na Fazenda">
+                    <div class="gallery-info">
+                        <h3>Energia Limpa</h3>
+                        <p>Fazendas brasileiras utilizando matrizes solares e biomassa.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="charts-section">
-            <h2><i class="fa-solid fa-chart-line"></i> Análise de Dados e Estatísticas</h2>
+            <h2><i class="fa-solid fa-chart-pie"></i> Dados Estatísticos Analíticos</h2>
             <div class="charts-grid">
                 <div class="chart-container">
-                    <h3>Evolução da Produção vs. Sustentabilidade (Florestas)</h3>
+                    <h3>Evolução da Produção vs. Preservação</h3>
                     <canvas id="lineChart"></canvas>
                 </div>
                 <div class="chart-container">
-                    <h3>Principais Culturas do Agro Brasileiro (% Exportação)</h3>
+                    <h3>Uso do Solo no Brasil (%)</h3>
                     <canvas id="pieChart"></canvas>
                 </div>
             </div>
@@ -68,20 +73,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Projeto Agrinho - Desenvolvido para fins acadêmicos e científicos.</p>
-        <p><i class="fa-solid fa-graduation-cap"></i> Incentivando a pesquisa no campo.</p>
+        <p>&copy; 2026 Projeto Agrinho - Inovação, Tecnologia e Sustentabilidade.</p>
+        <p>Imagens integradas via bancos de dados públicos para uso acadêmico.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-/* Paleta de Cores Baseada na Natureza e Sustentabilidade */
 :root {
-    --primary-color: #1b4332; /* Verde escuro floresta */
-    --secondary-color: #40916c; /* Verde folha */
-    --accent-color: #d8f3dc; /* Verde claro suave */
-    --light-bg: #f4f9f4; /* Fundo levemente esverdeado */
-    --text-dark: #2d3748;
+    --primary-color: #134e4a; /* Verde escuro tecnológico */
+    --secondary-color: #16a34a; /* Verde folha vivo */
+    --accent-color: #bbf7d0; /* Verde claro para destaques */
+    --light-bg: #f0fdf4; /* Fundo suave esverdeado */
+    --text-dark: #1f2937;
     --white: #ffffff;
 }
 
@@ -97,123 +101,131 @@ body {
     color: var(--text-dark);
 }
 
-/* Cabeçalho com Efeito Visual */
+/* Cabeçalho com Imagem Real do Agro de Fundo */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(rgba(19, 78, 74, 0.8), rgba(22, 163, 74, 0.7)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
     color: var(--white);
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    position: relative;
-    border-bottom: 5px solid #2d6a4f;
+    border-bottom: 6px solid var(--primary-color);
 }
 
 .logo-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    color: var(--accent-color);
     margin-bottom: 15px;
-    color: #95d5b2;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Container de Conteúdo */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* Seção de Pesquisa */
+/* Caixa de Busca */
 .search-section {
     background: var(--white);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     margin-bottom: 40px;
-    border-left: 5px solid var(--secondary-color);
 }
 
 .search-section h2 {
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .search-box {
     display: flex;
-    margin-top: 20px;
     gap: 10px;
 }
 
 .search-box input {
     flex: 1;
-    padding: 12px;
+    padding: 14px;
     border: 2px solid var(--accent-color);
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
 }
 
-.search-box input:focus {
-    border-color: var(--secondary-color);
-}
-
 .search-box button {
     background-color: var(--secondary-color);
     color: var(--white);
     border: none;
-    padding: 12px 25px;
+    padding: 0 25px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 .search-box button:hover {
     background-color: var(--primary-color);
 }
 
-/* Grid de Cards Estatísticos */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+/* Galeria de Imagens */
+.agro-gallery {
+    margin-bottom: 50px;
 }
 
-.card {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    transition: transform 0.3s;
-    border: 1px solid var(--accent-color);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-icon {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.data-number {
-    font-size: 2.2rem;
-    font-weight: bold;
+.agro-gallery h2 {
     color: var(--primary-color);
-    margin: 10px 0;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.gallery-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.gallery-card:hover {
+    transform: scale(1.03);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-info {
+    padding: 20px;
+}
+
+.gallery-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.gallery-info p {
+    font-size: 0.95rem;
+    color: #4b5563;
 }
 
 /* Gráficos */
 .charts-section h2 {
     color: var(--primary-color);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .charts-grid {
@@ -224,16 +236,15 @@ body {
 
 .chart-container {
     background: var(--white);
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .chart-container h3 {
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-dark);
 }
 
 /* Rodapé */
@@ -242,82 +253,48 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 30px 20px;
-    margin-top: 60px;
-    font-size: 0.9rem;
+    margin-top: 50px;
 }
-
-footer p {
-    margin: 5px 0;
-}
-// Inicialização dos Gráficos assim que a página carrega
 document.addEventListener("DOMContentLoaded", function () {
     
-    // 1. Gráfico de Linha: Evolução Produtividade vs Preservação
+    // Gráfico de Linha (Produção)
     const ctxLine = document.getElementById('lineChart').getContext('2d');
     new Chart(ctxLine, {
         type: 'line',
         data: {
-            labels: ['2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            labels: ['2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
-                label: 'Índice de Produtividade Saciável',
-                data: [65, 70, 75, 82, 88, 92, 98],
-                borderColor: '#40916c',
-                backgroundColor: 'rgba(64, 145, 108, 0.1)',
+                label: 'Uso de Bioinsumos (Em Milhões de Hectares)',
+                data: [22, 28, 35, 48, 55, 68],
+                borderColor: '#16a34a',
+                backgroundColor: 'rgba(22, 163, 74, 0.1)',
                 fill: true,
-                tension: 0.3
-            }, {
-                label: 'Uso de Tecnologias Bioeconômicas (%)',
-                data: [30, 38, 45, 52, 63, 70, 78],
-                borderColor: '#1b4332',
-                backgroundColor: 'transparent',
-                borderDash: [5, 5],
-                tension: 0.3
+                tension: 0.4
             }]
         },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { position: 'bottom' }
-            }
-        }
+        options: { responsive: true }
     });
 
-    // 2. Gráfico de Pizza: Culturas Sustentáveis Destacadas
+    // Gráfico de Rosca (Uso do Solo)
     const ctxPie = document.getElementById('pieChart').getContext('2d');
     new Chart(ctxPie, {
         type: 'doughnut',
         data: {
-            labels: ['Soja Certificada', 'Milho Safrinha', 'Cana (Etanol)', 'Algodão Orgânico', 'Outros'],
+            labels: ['Vegetação Nativa Preservada', 'Pastagens', 'Culturas Agrícolas', 'Outros'],
             datasets: [{
-                data: [40, 25, 18, 10, 7],
-                backgroundColor: ['#1b4332', '#2d6a4f', '#40916c', '#52b788', '#74c69d'],
-                borderWidth: 1
+                data: [66, 21, 9, 4],
+                backgroundColor: ['#134e4a', '#16a34a', '#4ade80', '#cbd5e1']
             }]
         },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { position: 'bottom' }
-            }
-        }
+        options: { responsive: true }
     });
 });
 
-// Função Simples de Pesquisa Acadêmica
 function buscarDados() {
-    const input = document.getElementById('searchInput').value.trim().toLowerCase();
-    
-    if (input === "") {
-        alert("Por favor, digite um termo ou cultura para pesquisar!");
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    if(input === "") {
+        alert("Por favor, insira um termo para pesquisa acadêmica.");
         return;
     }
-
-    // Exemplo de resposta simulando banco de dados acadêmico
-    if (input.includes("soja")) {
-        alert("📊 Dados de Pesquisa para 'Soja':\n\n- 85% do plantio no Brasil utiliza o Sistema de Plantio Direto (SPD).\n- Redução de emissão de carbono calculada em 18% nos últimos 3 anos.");
-    } else if (input.includes("milho")) {
-        alert("📊 Dados de Pesquisa para 'Milho':\n\n- O Milho safrinha consorciado com braquiária aumentou a proteção do solo em 40% nas regiões pesquisadas.");
-    } else {
-        alert(`🔍 Você buscou por: "${input}".\n\nEm um ambiente real conectado à API do IBGE/Embrapa, os artigos científicos e tabelas referentes a esse termo seriam filtrados aqui.`);
-    }
+    alert(`Buscando artigos científicos, imagens e dados estatísticos relacionados a: "${input}" no acervo do Agrinho 2026.`);
 }
