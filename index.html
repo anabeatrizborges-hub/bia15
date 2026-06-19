@@ -1,148 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agrinho 2026 - Agro Sustentável</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrinho 2026 - Agro Sustentável</title>
 
-  <link rel="stylesheet" href="style.css"/>
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-  <header>
-    <h1>🌱 Agrinho 2026</h1>
-    <p>Agro forte, futuro sustentável</p>
-  </header>
+<header class="topo">
+  <h1>🌱 Agrinho 2026</h1>
+  <p>Agro forte, futuro sustentável</p>
+</header>
 
-  <section class="hero">
-    <img src="assets/images/brasil-agro.jpg" alt="Agro Brasil">
-  </section>
+<nav class="menu">
+  <a href="#sobre">Sobre</a>
+  <a href="#dados">Dados</a>
+  <a href="#graficos">Gráficos</a>
+  <a href="#pesquisa">Pesquisa</a>
+</nav>
 
-  <section class="dashboard">
+<section class="hero">
+  <img src="assets/agro-brasil.jpg">
+</section>
 
-    <div class="card">
-      <h2>Produção Agrícola</h2>
-      <canvas id="chartProducao"></canvas>
-    </div>
+<section id="sobre" class="card">
+  <h2>Sobre o Agro</h2>
+  <p>O agronegócio brasileiro é essencial para economia e sustentabilidade.</p>
+</section>
 
-    <div class="card">
-      <h2>Sustentabilidade</h2>
-      <canvas id="chartSustentabilidade"></canvas>
-    </div>
+<section id="graficos" class="dashboard">
+  <canvas id="grafico1"></canvas>
+  <canvas id="grafico2"></canvas>
+</section>
 
-  </section>
+<section id="pesquisa" class="pesquisa">
+  <h2>Área de Pesquisa</h2>
+  <input placeholder="Buscar dados agrícolas...">
+  <button>Pesquisar</button>
+</section>
 
-  <section class="info">
-    <h2>📊 Área de Pesquisa</h2>
-    <p>
-      Este painel permite análise de dados do agronegócio brasileiro,
-      auxiliando estudantes e pesquisadores na visualização de estatísticas.
-    </p>
-  </section>
+<footer>
+  <p>Projeto Agrinho 2026</p>
+</footer>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(120deg, #0b3d0b, #1f7a1f);
+  font-family: Arial;
+  background: linear-gradient(to right, #0b3d0b, #145214, #1e7a1e);
   color: white;
 }
 
-header {
+.topo {
   text-align: center;
   padding: 20px;
   background: rgba(0,0,0,0.3);
 }
 
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #0d260d;
+  padding: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
 .hero img {
   width: 100%;
-  max-height: 400px;
+  height: 400px;
   object-fit: cover;
-  border-bottom: 5px solid #00ff88;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
 }
 
 .dashboard {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  justify-content: space-around;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  width: 400px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+canvas {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.info {
-  padding: 20px;
+.pesquisa {
   text-align: center;
+  padding: 30px;
 }
-const dadosProducao = {
-  labels: ["Soja", "Milho", "Café", "Algodão", "Cana"],
-  values: [120, 90, 60, 40, 110]
-};
-
-const dadosSustentabilidade = {
-  labels: ["Reflorestamento", "Energia limpa", "Uso de água consciente", "Solo preservado"],
-  values: [80, 70, 65, 90]
-};
-const ctx1 = document.getElementById('chartProducao');
-
-new Chart(ctx1, {
-  type: 'bar',
-  data: {
-    labels: dadosProducao.labels,
-    datasets: [{
-      label: 'Produção (mil toneladas)',
-      data: dadosProducao.values,
-      backgroundColor: '#00ff88'
-    }]
-  }
+const grafico1 = new Chart(document.getElementById("grafico1"), {
+type: "bar",
+data: {
+labels: ["Soja", "Milho", "Café", "Cana"],
+datasets: [{
+label: "Produção",
+data: [100, 90, 70, 120],
+backgroundColor: "green"
+}]
+}
 });
 
-const ctx2 = document.getElementById('chartSustentabilidade');
-
-new Chart(ctx2, {
-  type: 'pie',
-  data: {
-    labels: dadosSustentabilidade.labels,
-    datasets: [{
-      data: dadosSustentabilidade.values,
-      backgroundColor: ['#2ecc71','#27ae60','#1abc9c','#16a085']
-    }]
-  }
+const grafico2 = new Chart(document.getElementById("grafico2"), {
+type: "pie",
+data: {
+labels: ["Água", "Solo", "Energia", "Floresta"],
+datasets: [{
+data: [30, 20, 25, 25],
+backgroundColor: ["#2ecc71","#27ae60","#16a085","#1abc9c"]
+}]
+}
 });
-# 🌱 Agrinho 2026 - Agro Forte, Futuro Sustentável
-
-Este projeto é um painel interativo com foco no agronegócio brasileiro.
-
-## 🎯 Objetivo
-Ajudar estudantes e pesquisadores a visualizar dados agrícolas e ambientais.
-
-## 📊 Funcionalidades
-- Gráficos de produção agrícola
-- Análise de sustentabilidade
-- Interface verde temática
-- Imagens do agro brasileiro
-
-## 🚀 Tecnologias
-- HTML5
-- CSS3
-- JavaScript
-- Chart.js
-
-## 🌎 Tema
-Agrinho 2026 - Agro forte, futuro sustentável
